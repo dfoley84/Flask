@@ -1,0 +1,31 @@
+openapi: 3.0.0
+tags:
+  - name: vdesk
+parameters:
+  - name: machinename
+    in: path
+    type: string
+    required: true
+    description: Machine Name
+responses:
+    '200':
+      description: Successful response
+      schema:
+        id: Machine
+        properties:
+          ConnectionBroker: 
+            type: string
+          VDIPool:
+            type: string
+          MachineName:
+            type: string
+          MachineStatus:
+            type: string
+          AgentVersion:
+            type: int
+          OSVersion:
+            type: string
+    '400':
+      description: Bad Request
+    '500':
+      description: Internal Server Error
