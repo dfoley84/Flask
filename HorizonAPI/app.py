@@ -28,11 +28,6 @@ def GetMachineName(machinename):
 def GetMachineStatus(status):
     return jsonify(vDesks = [i.serialize for i in vDesk.query.filter_by(MachineStatus='Connected').all()])
 
-@app.route('/vdesk/<string:machinename>',methods=['DELETE'])
-@swag_from("./DeleteMachine.yaml")
-def DeleteMachineName(machinename):
-    data = []
-    return jsonify({'data': data})
 
 if __name__ == '__main__':
     app.run()
